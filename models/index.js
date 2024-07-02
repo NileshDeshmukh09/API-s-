@@ -18,7 +18,7 @@ db.sequelize = sequelize;
 db.User = require("./users/user")(sequelize, Sequelize);
 db.Role = require("./users/role")(sequelize, Sequelize);
 db.UserActivity = require("./users/userActivity")(sequelize, Sequelize);
-db.Products = require("./products/product")(sequelize, Sequelize);
+db.Product = require("./products/product")(sequelize, Sequelize);
 
 
 

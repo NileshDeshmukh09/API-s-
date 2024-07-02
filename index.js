@@ -25,7 +25,7 @@ db.sequelize
 const roleRoutes = require("./routes/role.routes");
 const userRoutes = require("./routes/user.routes");
 const userActivityRoutes = require("./routes/userActivity.js");
-const productRoutes = require("./routes/userActivity.js");
+const productRoutes = require("./routes/product.routes.js");
 app.use("/roles" , roleRoutes);
 app.use("/users" , userRoutes);
 app.use("/users/active-status" , userActivityRoutes);
