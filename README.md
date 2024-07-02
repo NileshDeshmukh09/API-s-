@@ -52,6 +52,9 @@
     http://localhost:3000/api-docs
 
     ```
+## Swagger Screenshot
+![Screenshot (164)](https://github.com/NileshDeshmukh09/API-s-/assets/86465008/259ebb9e-a5dc-43ea-b189-143c47b9250c)
+
 
 ### API Endpoints
     - Users
