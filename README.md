@@ -1,15 +1,5 @@
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-## Prerequisites
-
-Ensure you have the following installed on your machine:
-
-- [Node.js](https://nodejs.org/) (v14 or higher)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-- [PostgreSQL](https://www.postgresql.org/)
-
 ### setup project in local
 
 1. **Clone the repository**
@@ -88,6 +78,7 @@ Ensure you have the following installed on your machine:
 - Swagger is set up to document the API endpoints. You can access the Swagger UI at:
     ```
     http://localhost:3000/api-docs
+
     ```
 
 ### API Endpoints

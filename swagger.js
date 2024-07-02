@@ -7,10 +7,10 @@ const options = {
   swaggerDefinition: {
     openapi: "3.0.0",
     info: {
-      title: "NSE APIs Documentation",
+      title: "BillEasy APIs Documentation",
       version: "1.0.0",
       description:
-        "API documentation for nse project with Sequelize and OracleDB",
+        "API documentation for BillEasy project ",
     },
     servers:[
         {
