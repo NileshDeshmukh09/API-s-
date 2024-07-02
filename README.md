@@ -84,6 +84,12 @@ Ensure you have the following installed on your machine:
 ├── index.js ( main file )
 └── package.json
 
+## Swagger Documentation
+- Swagger is set up to document the API endpoints. You can access the Swagger UI at:
+    ```
+    http://localhost:3000/api-docs
+    ```
+
 ### API Endpoints
     - Users
        - POST /users: Create a new user
