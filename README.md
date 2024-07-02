@@ -73,20 +73,20 @@
 
 1. **User Controller Tests**
     - getUsers
-        should fetch all users with valid query parameters
-        should handle internal server error
+        - should fetch all users with valid query parameters
+        - should handle internal server error
 
 2. **Role Controller Tests**
     - createRole
-        should create a new role with valid input
+        - should create a new role with valid input
 
     - getRole
-        should fetch all roles
-        should handle errors when fetching roles
+        - should fetch all roles
+        - should handle errors when fetching roles
 
 3. **Product Controller Tests**
     - createProduct
-        should create a new product with valid input
-        should create a new product with valid input and price above threshold with approval code
-        should return error for invalid category
+        - should create a new product with valid input:
+        - should create a new product with valid input and price above threshold with approval code
+        - should return error for invalid category
 
