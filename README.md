@@ -38,41 +38,13 @@
     Replace the values with your actual URLs as needed.
 
 5. **Start the development server**
-
+      
     ``` 
     npm start
     ```
+   server will run on  ` http://localhost:3000/ `
+   
 
-
-## Project Structure
-
-├── controllers
-│ ├── __tests__ ( written All testcases )
-|   ├── productController.test.js
-|   ├── roleController.test.js
-|   ├── userController.test.js
-| ├── products
-    ├── product.controller.js
-| ├── user
-|   ├── role.controller.js
-│   ├── user.controller.js
-│   └── userActive.controller.js
-├── models
-│ ├── index.js
-| ├── user
-|   ├── user.model.js
-│   ├── role.model.js
-│   └── userActive.model.js
-├── routes
-│ ├── user.routes.js
-│ ├── product.routes.js
-│ ├── userActive.routes.js
-│ └── role.routes.js
-├── .env
-├── .gitignore
-├── README.md
-├── index.js ( main file )
-└── package.json
 
 ## Swagger Documentation
 - Swagger is set up to document the API endpoints. You can access the Swagger UI at:
@@ -114,7 +86,7 @@
 
 3. **Product Controller Tests**
     - createProduct
-        should create a new product with valid input:
+        should create a new product with valid input
         should create a new product with valid input and price above threshold with approval code
         should return error for invalid category
 
