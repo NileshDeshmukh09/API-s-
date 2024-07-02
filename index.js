@@ -24,8 +24,12 @@ db.sequelize
 
 const roleRoutes = require("./routes/role.routes");
 const userRoutes = require("./routes/user.routes");
-app.use("" , roleRoutes);
-app.use("" , userRoutes);
+const userActivityRoutes = require("./routes/userActivity.js");
+const productRoutes = require("./routes/userActivity.js");
+app.use("/roles" , roleRoutes);
+app.use("/users" , userRoutes);
+app.use("/users/active-status" , userActivityRoutes);
+app.use("/products" , productRoutes);
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");

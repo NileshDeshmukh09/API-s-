@@ -15,9 +15,10 @@ const sequelize = new Sequelize(
 const db = {};
 
 db.sequelize = sequelize;
-db.User = require("../models/user")(sequelize, Sequelize);
-db.Role = require("../models/role")(sequelize, Sequelize);
-db.UserActivity = require("../models/userActivity")(sequelize, Sequelize);
+db.User = require("./users/user")(sequelize, Sequelize);
+db.Role = require("./users/role")(sequelize, Sequelize);
+db.UserActivity = require("./users/userActivity")(sequelize, Sequelize);
+db.Products = require("./products/product")(sequelize, Sequelize);
 
 
 

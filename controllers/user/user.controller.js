@@ -1,5 +1,5 @@
 const { Op } = require("sequelize");
-const { db } = require("../models");
+const { db } = require("../../models");
 const { User, Role, UserActivity } = db;
 
 const createUser = async (req, res) => {
@@ -51,38 +51,54 @@ const createUser = async (req, res) => {
 
 const getUsers = async (req, res) => {
   try {
-    const { role,  } = req.query;
+    const { role, active, pageSize = 10, page = 1, sort = 'createdAt', order = 'ASC' } = req.query;
 
     const where = {};
+    const activityWhere = {};
 
     if (role) {
       const roleObj = await Role.findOne({ where: { name: role } });
       where.roleId = roleObj ? roleObj.id : null;
     }
 
-    // if (active) {
-    //   const userIDs = await UserActivity.findAll({
-    //     where: { is_active: active },
-    //     attributes: ["userId"],
-    //   });
-    //   where.id = { [Op.in]: userIDs };
-    // }
+    if (active !== undefined) {
+      activityWhere.is_active = active === 'true';
+    }
 
-    const users = await User.findAll({
+    const users = await User.findAndCountAll({
       where,
+      include: [
+        { model: Role, attributes: ['name'], as: 'Role' },
+        { model: UserActivity, attributes: ['is_active'], as: 'UserActivity', where: activityWhere },
+      ],
+      limit: parseInt(pageSize),
+      offset: (page - 1) * pageSize,
+      order: [[sort, order.toUpperCase()]],
     });
+
+    const result = users?.rows?.map(user => ({
+      id: user?.id,
+      name: user?.name,
+      email: user?.email,
+      role: user?.Role?.name,
+      is_active: user?.UserActivity?.is_active,
+      created_at: user?.createdAt,
+    }));
 
     res.status(200).json({
       success: true,
       message: "Fetched all users!",
-      TotalUser: users.length,
-      users,
+      totalUsers: users.count,
+      currentPage: parseInt(page),
+      totalPages: Math.ceil(users.count / pageSize),
+      users: result
     });
   } catch (err) {
-    console.log("Error in fetch user : ", err);
+    console.log("Error in fetching users: ", err);
     res.status(500).json({ success: false, message: "Internal server error" });
   }
 };
+
 module.exports = {
   createUser,
   getUsers,
