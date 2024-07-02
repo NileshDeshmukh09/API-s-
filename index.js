@@ -4,7 +4,8 @@ const logger = require("morgan")
 const app = express();
 const cors = require("cors")
 require("dotenv").config();
-const PORT = process.env.PORT || 3000
+const { specs, swaggerUi } = require("./swagger");
+const PORT = process.env.PORT || 3000;
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -27,6 +28,8 @@ const roleRoutes = require("./routes/role.routes");
 const userRoutes = require("./routes/user.routes");
 const userActivityRoutes = require("./routes/userActivity.js");
 const productRoutes = require("./routes/product.routes.js");
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 app.use("/roles" , roleRoutes);
 app.use("/users" , userRoutes);
 app.use("/users/active-status" , userActivityRoutes);

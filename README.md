@@ -40,7 +40,7 @@ Ensure you have the following installed on your machine:
     POSTGRES_HOST="your_postgres_host"
     POSTGRES_PASSWORD="your_postgres_password"
     POSTGRES_DATABASE="your_postgres_database"
-    PORT=8000
+    PORT=3000
 
 
     ```
