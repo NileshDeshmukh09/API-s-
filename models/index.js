@@ -2,11 +2,11 @@ const { Sequelize } = require("sequelize");
 
 
 const sequelize = new Sequelize(
-  "api-db",
-  "postgres",
-  "root",
+  process.env.POSTGRES_DATABASE|| "api-db" ,
+  process.env.POSTGRES_USER || "postgres",
+  process.env.POSTGRES_PASSWORD || "root",
   {
-    host: "localhost",
+    host: process.env.POSTGRES_HOST,
     dialect: "postgres",
     sslmode: "require",
   }
